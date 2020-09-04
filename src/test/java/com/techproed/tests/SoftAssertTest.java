@@ -67,5 +67,10 @@ public class SoftAssertTest {
         // aynı hard assert'teki gibi.
         // Assert.assertTrue()
 
-    }
+
+
+        }
+
+
+
 }
