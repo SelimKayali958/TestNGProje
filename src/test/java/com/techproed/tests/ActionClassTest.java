@@ -50,6 +50,7 @@ public class ActionClassTest extends TestBase {
             e.printStackTrace();
         }
         actions.sendKeys(Keys.PAGE_UP).perform();
+
     }
 
 
