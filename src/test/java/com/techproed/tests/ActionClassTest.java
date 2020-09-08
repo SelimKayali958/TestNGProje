@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 public class ActionClassTest extends TestBase {
     @Test
-    public void sagTiklama(){
+    public void sagTiklama() {
         driver.get("https://the-internet.herokuapp.com/context_menu");
         WebElement element = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
@@ -15,8 +15,9 @@ public class ActionClassTest extends TestBase {
         // actions class ile işlem yaparsanız, HER SEFERİNDE "PERFORM" yapmak zorundasınız.
         actions.contextClick(element).perform();
     }
+
     @Test
-    public void ciftTiklama(){
+    public void ciftTiklama() {
         driver.get("http://demo.guru99.com/test/simple_context_menu.html");
         WebElement button = driver.findElement(By.xpath("//button[@ondblclick='myFunction()']"));
         Actions actions = new Actions(driver);
@@ -24,8 +25,9 @@ public class ActionClassTest extends TestBase {
         // methodunu kullanabiliriz.
         actions.doubleClick(button).perform();
     }
+
     @Test
-    public void hoverOver(){
+    public void hoverOver() {
         driver.get("http://amazon.com");
         WebElement menu = driver.findElement(By.id("nav-link-accountList"));
         Actions actions = new Actions(driver);
@@ -33,8 +35,9 @@ public class ActionClassTest extends TestBase {
         // moveToElement methodunu kullabiliriz.
         actions.moveToElement(menu).perform();
     }
+
     @Test
-    public void asagiYukari(){
+    public void asagiYukari() {
         driver.get("http://amazon.com");
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -53,5 +56,39 @@ public class ActionClassTest extends TestBase {
 
     }
 
+    @Test
+    public void buyukKucukYazma() {
+
+        // MERHABA nasılsınız LIVE channel
+        driver.get("http://google.com");
+        // name= "q"
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+
+        // bu standart yazma metodumuz
+        // aramaKutusu.sendKeys("merhaba nasilsiniz");
+
+        // Bu sekilde her karakteri buyuk yapar
+        // aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz");
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(aramaKutusu).click()
+                .keyDown(Keys.SHIFT)
+                .sendKeys("merhaba")
+                .keyUp(Keys.SHIFT)
+                .sendKeys(" nasilsiniz")
+                .perform();
+    }
+
+    @Test
+    public  void dragAndDrop () {
+        driver.get("http://google.com");
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+        WebElement logo = driver.findElement(By.id("hplogo"));
+
+        Actions actions = new Actions(driver);
+        // logo webelementini arama kutusuna surukle ve birak
+        actions.dragAndDrop(logo,aramaKutusu).perform();
+
+    }
 
 }
