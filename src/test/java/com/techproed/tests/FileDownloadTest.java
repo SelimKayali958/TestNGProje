@@ -45,7 +45,7 @@ public class FileDownloadTest extends TestBase {
     }
 
     @Test
-    public void dosyaDownoad(){
+    public void dosyaDownload(){
         //C:\Users\mk201\Downloads\Amsterdam.jpg
         driver.get("http://the-internet.herokuapp.com/download");
         WebElement amsterdamLinki = driver.findElement(By.partialLinkText("Amsterdam"));

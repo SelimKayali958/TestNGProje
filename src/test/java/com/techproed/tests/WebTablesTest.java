@@ -86,7 +86,7 @@ public class WebTablesTest extends TestBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // //tbody/tr/td[4] -> Burada 4. sütun'u yazdırıyoruz.
+        // //tbody/tr/td[4] -> Burada 4. sütun'un 4. datasini yazdırıyoruz.
         // buradaki 4 sayısını değiştirerek istediğimiz kolon(sütun)'u yazdırabiliriz.
         List<WebElement> nameSutunu = driver.findElements(By.xpath("//tbody//td[4]"));
         for(WebElement name : nameSutunu){

@@ -29,7 +29,7 @@ public class JSAlertTest {
         WebElement button = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
         button.click();
 
-        // alertin ierdigi mesaji almak icin getText() kullaniriz.
+        // alertin icerdigi mesaji almak icin getText() kullaniriz.
         String alertMesaji =  driver.switchTo().alert().getText();
         System.out.println(alertMesaji);
 
