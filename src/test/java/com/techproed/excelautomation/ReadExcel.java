@@ -72,6 +72,16 @@ public class ReadExcel {
             System.out.println(workbook.getSheetAt(0).getRow(3).getCell(i));
         }
 
+
+     for (int i = 0 ; i <= sonSatirIndexi ; i++){
+         for (int k = 0 ; k <sonSutunIndex ; k++){
+             System.out.print(workbook.getSheetAt(0).getRow(i).getCell(k)+"=====");
+         }
+         System.out.println();
+     }
+
+
+
         fileInputStream.close();
         workbook.close();
 
