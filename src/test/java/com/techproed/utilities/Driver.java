@@ -1,20 +1,24 @@
 package com.techproed.utilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
 import java.util.concurrent.TimeUnit;
+
 public class Driver {
     // Eğer bir class'tan NESNE ÜRETİLMESİNİ İSTEMİYORSANIZ
     // constructor'ı private yapabilirsiniz (Singleton Class)
     private Driver(){ }
+
     // WebDriver nesnemizi, static olarak oluşturduk, çünkü program başlar başlamaz
     // hafızada yer almasını istiyoruz.
     static WebDriver driver;
+
     // Programın herhangi bir yerinden getDriver() methodu çağırılarak
     // hafıza STATIC olarak oluşturulmuş DRIVER nesnesine erişebiliriz.
     // Yani yeniden WebDriver nesnesi oluşturmak zorunda değiliz.
@@ -46,11 +50,15 @@ public class Driver {
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
             }
+
         }
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+
         return driver;
     }
+
     public static void closeDriver(){
         // Eğer driver nesnesi NULL değilse, yani hafızada varsa
         if (driver != null){
@@ -58,4 +66,7 @@ public class Driver {
             driver = null;  // driver'ı hafızadan temizle.
         }
     }
+
+
+
 }

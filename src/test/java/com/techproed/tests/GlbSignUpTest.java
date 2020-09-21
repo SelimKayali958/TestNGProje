@@ -5,6 +5,8 @@ import com.techproed.utilities.ConfigurationReader;
 import com.techproed.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class GlbSignUpTest {
@@ -18,6 +20,16 @@ public class GlbSignUpTest {
 * 5. Adım : Success yazısını görüp görmediğimi Assert ile doğrulayalım.
 *
 */
+
+    @BeforeSuite
+    public void beforeSuite(){
+        System.out.println("beforeSuite çalıştı");
+    }
+    @BeforeTest
+    public void beforeTest(){
+        System.out.println("beforeTest çalıştı");
+    }
+
 
 
     @Test (groups = {"glbtrader"})
